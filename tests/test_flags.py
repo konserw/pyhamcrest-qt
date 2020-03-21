@@ -8,10 +8,10 @@
 # You should have received a copy of the GNU General Public License along with this program.
 # If not, see <http://www.gnu.org/licenses/>.
 #
-import pytest
-from hamcrest import assert_that, calling, raises
-from flags import has_item_flags
 from Qt5 import QtCore
+from hamcrest import assert_that, calling, raises
+
+from qtmatchers import has_item_flags
 
 
 class TestItemFlags:

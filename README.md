@@ -1,3 +1,5 @@
+[![PyPI version](https://badge.fury.io/py/pyhamcrest-qt.png)](https://badge.fury.io/py/pyhamcrest-qt)
+
 # pyhamcrest-qt
 PyHamcrest extensions for use with Qt (either pyside2 or PyQt5)
 

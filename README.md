@@ -7,7 +7,8 @@ Install form PyPI:
 `pip install pyhamcrest-qt`
 
 ## Available Matchers
-* `has_item_flags()` for comparing QtCore.Qt.ItemFlags
+* `has_item_flags` for comparing QtCore.Qt.ItemFlags
+* `has_window_type` for comparing WindowTypes (WIP)
 
 ## Usage example
 ```

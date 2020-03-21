@@ -35,7 +35,7 @@ class HasFlags(BaseMatcher):
         return "( {} )".format(" | ".join(str_list))
 
 
-def has_item_flags(flags: QtCore.Qt.ItemFlag):
+def has_item_flags(flags: QtCore.Qt.ItemFlags) -> HasFlags:
     names = {
         QtCore.Qt.NoItemFlags: "NoItemFlags",
         QtCore.Qt.ItemIsSelectable: "ItemIsSelectable",
@@ -50,3 +50,21 @@ def has_item_flags(flags: QtCore.Qt.ItemFlag):
     }
     return HasFlags(names, flags)
 
+
+def has_window_type(window_type: QtCore.Qt.WindowType) -> HasFlags:
+    names = {
+        QtCore.Qt.Widget: "Widget",
+        QtCore.Qt.Window: "Window",
+        QtCore.Qt.Dialog: "Dialog",
+        QtCore.Qt.Sheet: "Sheet",
+        QtCore.Qt.Drawer: "Drawer",
+        QtCore.Qt.Popup: "Popup",
+        QtCore.Qt.Tool: "Tool",
+        QtCore.Qt.ToolTip: "ToolTip",
+        QtCore.Qt.SplashScreen: "Splashscreen",
+        QtCore.Qt.Desktop: "Desktop",
+        QtCore.Qt.SubWindow: "SubWindow",
+        QtCore.Qt.ForeignWindow: "ForeignWindow",
+        QtCore.Qt.CoverWindow: "CoverWindow"
+    }
+    return HasFlags(names, window_type)

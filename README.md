@@ -11,6 +11,8 @@ Install form PyPI:
 ## Available Matchers
 * `has_item_flags` for comparing QtCore.Qt.ItemFlags
 * `has_window_type` for comparing WindowTypes (WIP)
+* `enabled` for checking if widget is enabled
+* `disabled` for checking if widget is disabled
 
 ## Usage example
 ```

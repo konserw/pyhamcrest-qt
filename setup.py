@@ -13,13 +13,13 @@ from distutils.core import setup
 setup(
     name="pyhamcrest-qt",
     packages=["qtmatchers"],
-    version="0.2",
+    version="0.3",
     license="GNU GPL v3+",
     description="PyHamcrest extensions for use with Qt (either pyside2 or PyQt5)",
     author="Kamil Strzempowicz",
     author_email="konserw@gmail.com",
     url="https://github.com/konserw/pyhamcrest-qt",
-    download_url="https://github.com/konserw/pyhamcrest-qt/archive/v0.2.zip",
+    download_url="https://github.com/konserw/pyhamcrest-qt/archive/v0.3.zip",
     keywords=["Hamcrest", "pyHamcrest", "Qt", "pyside2", "PyQt5", "matchers"],
     install_requires=[
         "Qt5.py",

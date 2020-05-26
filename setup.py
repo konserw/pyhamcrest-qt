@@ -10,16 +10,18 @@
 #
 from distutils.core import setup
 
+VERSION = 0.4
+
 setup(
     name="pyhamcrest-qt",
     packages=["qtmatchers"],
-    version="0.3",
+    version=f"{VERSION}",
     license="GNU GPL v3+",
     description="PyHamcrest extensions for use with Qt (either pyside2 or PyQt5)",
     author="Kamil Strzempowicz",
     author_email="konserw@gmail.com",
     url="https://github.com/konserw/pyhamcrest-qt",
-    download_url="https://github.com/konserw/pyhamcrest-qt/archive/v0.3.zip",
+    download_url=f"https://github.com/konserw/pyhamcrest-qt/archive/v{VERSION}.zip",
     keywords=["Hamcrest", "pyHamcrest", "Qt", "pyside2", "PyQt5", "matchers"],
     install_requires=[
         "Qt5.py",

@@ -12,7 +12,7 @@ import pytest
 from Qt5 import QtWidgets
 from hamcrest import assert_that, calling, raises, is_
 
-from qtmatchers import enabled, disabled
+from qtmatchers import enabled, disabled, checked, unchecked
 
 
 @pytest.fixture
@@ -26,6 +26,22 @@ def enabled_widget(qtbot):
 def disabled_widget(qtbot):
     widget = QtWidgets.QWidget()
     widget.setEnabled(False)
+    qtbot.addWidget(widget)
+    return widget
+
+
+@pytest.fixture
+def checked_radiobutton(qtbot):
+    widget = QtWidgets.QRadioButton()
+    widget.setChecked(True)
+    qtbot.addWidget(widget)
+    return widget
+
+
+@pytest.fixture
+def unchecked_radiobutton(qtbot):
+    widget = QtWidgets.QRadioButton()
+    widget.setChecked(False)
     qtbot.addWidget(widget)
     return widget
 
@@ -52,5 +68,29 @@ class TestProperties:
             calling(assert_that).with_args(enabled_widget, is_(disabled())),
             raises(AssertionError, r"Expected: widget to be disabled.\n"
                                    r"\s*but: was enabled"
+                   )
+        )
+
+    def test_checked_passing(self, checked_radiobutton):
+        # this should not rise
+        assert_that(checked_radiobutton, is_(checked()))
+
+    def test_unchecked_passing(self, unchecked_radiobutton):
+        # this should not rise
+        assert_that(unchecked_radiobutton, is_(unchecked()))
+
+    def test_checked_failing(self, unchecked_radiobutton):
+        assert_that(
+            calling(assert_that).with_args(unchecked_radiobutton, is_(checked())),
+            raises(AssertionError, r"Expected: widget to be checked.\n"
+                                   r"\s*but: was unchecked"
+                   )
+        )
+
+    def test_unchecked_failing(self, checked_radiobutton):
+        assert_that(
+            calling(assert_that).with_args(checked_radiobutton, is_(unchecked())),
+            raises(AssertionError, r"Expected: widget to be unchecked.\n"
+                                   r"\s*but: was checked"
                    )
         )

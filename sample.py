@@ -1,7 +1,7 @@
 from Qt5 import QtCore, QtWidgets
-from hamcrest import assert_that
+from hamcrest import assert_that, is_
 
-from qtmatchers import has_item_flags
+from qtmatchers import has_item_flags, enabled
 
 
 class TestSample:

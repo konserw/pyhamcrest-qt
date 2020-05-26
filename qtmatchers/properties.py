@@ -37,3 +37,11 @@ def enabled():
 
 def disabled():
     return HasProperty("isEnabled", False, "enabled", "disabled")
+
+
+def checked():
+    return HasProperty("isChecked", True, "checked", "unchecked")
+
+
+def unchecked():
+    return HasProperty("isChecked", False, "checked", "unchecked")
